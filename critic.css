@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-image: url("introbk.png");
+}
+
+h1, h2, h3, h4 {
+	color:#ffffff;
+}
+
+div {
+	color:#ffffff;
+}
+

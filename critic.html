@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" type="text/css" href="critic.css" /> 
+
+<script>
+
+function critic()  {
+	document.getElementById("pickrating").style.display = "none";
+	var kval;	
+	var mess = "";
+		var nodeList = document.getElementsByName("sum");
+		for (var i=0; i<nodeList.length; ++i){
+			if (nodeList[i].checked) {
+				kval = nodeList[i].value;
+    	    }
+		}
+		switch (kval)	{
+			case "1":
+				mess = "Really? Did you even watch? You have poor taste!";
+				break;
+			case "2":
+				mess = "I see, well thanks for nothing!";
+				break;
+			case "3":
+				mess = "You found it mediocre? We probably won't be asking you back!";
+				break;
+			case "4":
+				mess = "It was pretty good? Thank you! Enjoy another show!";
+				break;
+			case "5":
+				mess = "We agree it was excellent and we think you are excellent too! <br>Relax and Watch Some More!";
+				break;
+			default:
+				mess = "Could not hear you, try again.";
+				break;	
+		}
+			 document.getElementById("message").innerHTML = mess; 
+}		
+
+
+
+</script>
+</head>
+<body>
+
+<center>
+<h2><div id="message"></div></h2><br>
+
+<div id="pickrating">
+<h1> IF YOU WATCHED A SHOW, PLEASE RATE IT!</h1>
+<h2> Or click the Home Button to watch a show!</h2>
+
+    That Sucked. <input name="sum" type="radio" value="1" /><br>
+    Long and Boring. <input name="sum" type="radio" value="2" /><br>
+    Just Okay - Mediocre. <input name="sum" type="radio" value="3" /><br> 
+    It Pretty Good. <input name="sum" type="radio" value="4" /><br>
+    Loved it! <input name="sum" type="radio" value="5" checked="checked" /><br> <br> 
+    
+   <input type="submit" name="submit" value="submit" onclick="critic()"/> <br> <br>       
+</div> 
+
+<button onclick="window.location.assign('showtime6.html')">Home</button>
+</center>
+
+</body>
+</html>
+
+
+
