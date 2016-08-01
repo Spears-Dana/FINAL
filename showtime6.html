@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Show Daddy</title>
+<link rel="stylesheet" type="text/css" href="show.css" /> 
+<script>
+
+//Show
+
+function runshow()  {
+		var kval;	
+		var nodeList = document.getElementsByName("num");
+		for (var i=0; i<nodeList.length; ++i){
+			if (nodeList[i].checked) {
+				kval = nodeList[i].value;
+			}
+		}
+//load 1D			
+if (kval == 1) {
+			
+			var pictures = new Array(17);
+			
+			pictures[0] = "1.jpg";
+			pictures[1] = "2.jpg";
+			pictures[2] = "2.jpg";
+			pictures[3] = "16.jpg";
+			pictures[4] = "3.jpg";
+			pictures[5] = "5.jpg";
+			pictures[6] = "7.jpg";
+			pictures[7] = "6.jpg";
+			pictures[8] = "4.jpg";			
+			pictures[9] = "9.jpg";			
+			pictures[10] = "10.jpg";			
+			pictures[11] = "11.jpg";
+			pictures[12] = "14.jpg";
+			pictures[13] = "8.jpg";
+			pictures[14] = "12.jpg";
+			pictures[15] = "15.jpg";
+			pictures[16] = "15.jpg";
+			
+			
+	}
+	
+	//load potter
+	else if (kval == 2)  {
+		
+		var pictures = new Array(17);
+			
+			pictures[0] = "a.png";
+			pictures[1] = "2.jpg";
+			pictures[2] = "2.jpg";
+			pictures[3] = "m.jpg";
+			pictures[4] = "b.png";
+			pictures[5] = "d.jpg";
+			pictures[6] = "e.png";
+			pictures[7] = "f.jpg";
+			pictures[8] = "g.png";
+			pictures[9] = "h.jpg";
+			pictures[10] = "i.jpg";
+			pictures[11] = "j.jpg";
+			pictures[12] = "k.jpg";
+			pictures[13] = "c.png";
+			pictures[14] = "l.png";	
+			pictures[15] = "15.jpg";
+			pictures[16] = "15.jpg";		
+	}
+	
+	// load Avant Guarde 
+	else if (kval == 3) {
+		
+		var pictures = new Array(17);
+		
+			pictures[0] = "A1.jpg";
+			pictures[1] = "2.jpg";
+			pictures[2] = "2.jpg";
+			pictures[3] = "A16.jpg";
+			pictures[4] = "A2.jpg";
+			pictures[5] = "A4.jpg";
+			pictures[6] = "A5.jpg";
+			pictures[7] = "A6.jpg";
+			pictures[8] = "A7.jpg";
+			pictures[9] = "A8.jpg";
+			pictures[10] = "A9.jpg";
+			pictures[11] = "A10.jpg";
+			pictures[12] = "A11.jpg";		
+			pictures[13] = "A3.jpg";
+			pictures[14] = "A12.jpg";
+			pictures[15] = "15.jpg";
+			pictures[16] = "15.jpg";
+	}
+	
+	//Load Force of Nature
+	else if (kval == 4) {
+		
+		var pictures = new Array(17);
+		
+			pictures[0] = "AB1.jpg";
+			pictures[1] = "2.jpg";
+			pictures[2] = "2.jpg";
+			pictures[3] = "AB16.jpg";
+			pictures[4] = "AB2.jpg";
+			pictures[5] = "AB4.jpg";
+			pictures[6] = "AB5.jpg";
+			pictures[7] = "AB6.jpg";
+			pictures[8] = "AB7.jpg";
+			pictures[9] = "AB8.jpg";
+			pictures[10] = "AB9.jpg";
+			pictures[11] = "AB10.jpg";
+			pictures[12] = "AB11.jpg";
+			pictures[13] = "AB3.jpg";
+			pictures[14] = "AB12.jpg";
+			pictures[15] = "15.jpg";
+			pictures[16] = "15.jpg";		
+	}
+	//load music only
+	else {
+			
+			var pictures = new Array(6);
+			
+			pictures[0] = "1.jpg";
+			pictures[1] = "19.jpg";
+			pictures[2] = "19.jpg";
+			pictures[3] = "19.jpg";
+			pictures[4] = "20.jpg";
+			pictures[5] = "20.jpg";
+			
+	}
+	
+	return pictures;
+	
+}
+
+//starts show
+var i = 0;
+
+	
+function showtime()  {
+	showit3();
+	hideit();
+	music();
+	document.body.style.backgroundColor = "#000000";
+    document.body.style.backgroundImage = "url('theatre.jpg')";
+	runshow();
+	var pictures2 = runshow();	
+	i++
+	document.getElementById("harryImg").src = pictures2[i];
+}
+
+//MUSIC				
+
+ var a = 0;			
+	function music() {
+		var a = document.getElementById("myMusic").value;
+			
+		if (a == 1) {
+			dig = "myAudio";
+		}
+		else if (a == 2) {
+			dig = "myAudio2";
+		}
+		else if (a == 3) {
+			dig = "myAudio3";
+		}
+		else if (a == 4) {
+			dig = "myAudio4";
+		}
+		else {
+			document.getElementById("jack").style.display="none";
+			alert("you MUST select music, the show is optional");
+			window.location.href='showtime6.html';
+			window.location.reload(true);
+		}
+		
+		
+		document.getElementById(dig).play();
+	}
+	
+        	
+//titles and elections
+function hideit()  {
+	document.getElementById("pickshow").style.display = "none";
+	document.getElementById("myMusic").style.display = "none";
+	document.getElementById("crook").style.display = "none";
+	document.getElementById("snook").style.display = "none";			
+}
+
+function showit()  {
+	document.getElementById("pickshow").style.display = "block";
+	document.getElementById("myMusic").style.display = "block";
+	document.getElementById("crook").style.display = "block";
+	document.getElementById("snook").style.display = "block";
+}
+
+//image and picture
+function showit3() {
+	document.getElementById("harryImg").style.display = "block";
+	document.getElementById("jack").style.display = "block";	
+}
+
+function hideit3() {
+	document.getElementById("harryImg").style.display = "none";
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<center>
+<h2 id="crook">WELCOME TO SHOW OFF THEATRE!</h2><br>
+
+<h3 id="snook">1.  YOU MUST CHOOSE MUSIC: </h3>
+
+<select style="width: 20%;" id="myMusic" text-align="right">
+  	  <option selected disabled style="background:blue">Select:</option>
+      <option value="1" style="background:yellow">I Only Have Eyes For You</option>
+	  <option value="2" style="background:red">I Want To Write You A Song</option>
+	  <option value="3" style="background:green">Here</option>
+	  <option value="4" style="background:blue">Harry Potter</option>
+</select>
+	
+<br>
+<br>
+<audio id="myAudio"><source src="eyes.mp3" type="audio/mp3" />Your browser does not support the audio element.</audio>
+<audio id="myAudio2"><source src="song.mp3" type="audio/mp3" />Your browser does not support the audio element.</audio>
+<audio id="myAudio3"><source src="here.mp3" type="audio/mp3" />Your browser does not support the audio element.</audio>
+<audio id="myAudio4"><source src="potter.mp3" type="audio/mp3" />Your browser does not support the audio element.</audio>
+	
+
+<div id="pickshow">
+<h3>2.  YOU MAY CHOOSE A SHOW:<br>
+        One Direction <input name="num" id="show1" type="radio" value="1" /><br>
+        Harry Potter <input name="num" id="show2" type="radio" value="2" /><br>
+        Avant-garde <input name="num" id="show3" type="radio" value="3" /><br> 
+        Force of Nature <input name="num" id="show4" type="radio" value="4" /><br><br>
+        <button type="button" onclick= "setInterval(function () {showtime()}, 3200)">ENTER THEATRE</button></h3>
+        
+<h4>Program may take a few moments to load...</h4>       
+
+</div></center>
+
+<center><img id="harryImg" src="two.jpg" alt="." style="display:none"/></center>
+
+<br> <br> 
+<form method="" action="critic.html">
+<input type="submit" id="jack" value="Leave Theatre" style="display:none;"/>
+</form>
+
+</body>
+</html>
+
+
+
+
